@@ -1,16 +1,50 @@
-# React + Vite
+# <SM> // Sourabh Mahiya — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Neo-Brutalist, retro-terminal inspired developer portfolio built with **React**, **Vite**, and **React Router**. Designed with high-contrast aesthetics, hard offset shadows, custom scroll-triggered animations, and a mobile-first bottom dock navigation architecture.
 
-Currently, two official plugins are available:
+## ✨ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Neo-Brutalist UI Architecture:** Crisp `3px` solid borders, offset neo-brutalist box shadows, custom grid patterns, and `Space Mono` typography.
+* **Scroll-Triggered Staggered Animations:** Hardware-accelerated CSS transitions (`cubic-bezier`) paired with the native `IntersectionObserver` API for directional card entrances (`.slide-left`, `.slide-up`, `.slide-right`, `.scale-up`).
+* **Adaptive Mobile Dock Navigation:** Desktop multi-section top bar that transforms on mobile viewports (`<= 768px`) into a compact `<SM>` top header and a fixed 5-tab bottom navigation dock with active route tracking.
+* **Interactive Project Showcase:** Home page 70/30 split carousel for featured builds alongside a dedicated `/projects` technical archive detailing architectural highlights, tech stacks, and live links.
+* **Verified Certifications Vault & Lightbox:** Dedicated `/certifications` gallery with automatic image fallback handling and an interactive full-screen modal lightbox viewer.
+* **Serverless Contact Transmission:** Integrated with **EmailJS** (`@emailjs/browser`) for direct, zero-backend email delivery with real-time transmission status states (`sending`, `success`, `error`).
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+* **Frontend Framework:** React 18, Vite
+* **Routing:** React Router DOM (`useLocation`, `Link`, hash-aware active states)
+* **Styling:** Custom Modular CSS3 (Grid, Flexbox, CSS Variables, Media Queries, Keyframe Animations)
+* **Email Delivery:** EmailJS (`@emailjs/browser`)
+* **Typography:** Space Mono & Times New Roman
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Project Structure
+
+```text
+portfolio-app/
+├── public/
+│   ├── Certificates/             # Certification preview images
+│   ├── dp.jpg                    # Profile avatar
+│   ├── pc.jpg                    # Contact terminal workstation image
+│   └── SOURABH_MAHIYA-CV.pdf     # Downloadable resume
+├── src/
+│   ├── components/
+│   │   ├── AboutMe/              # 3-column profile, core focus, & academics grid
+│   │   ├── ExperienceSection/    # Career timeline & CTA banner
+│   │   ├── Footer/               # Site footer
+│   │   └── NavBar/               # Responsive top bar & mobile bottom dock
+│   ├── data/
+│   │   └── portfolioData.js      # Centralized projects & certifications data
+│   ├── pages/
+│   │   ├── HomePage/             # Hero containers, Skills strip, & ShowcaseSection
+│   │   ├── ProjectsPage/         # Full technical archive grid
+│   │   ├── CertificationsPage/   # Credentials grid & modal lightbox
+│   │   └── ContactMe/            # EmailJS form & direct social channels
+│   ├── App.jsx
+│   └── main.jsx
+└── package.json
