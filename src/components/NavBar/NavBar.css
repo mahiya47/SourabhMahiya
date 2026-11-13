@@ -1,0 +1,220 @@
+/* ==================== NAVBAR CONTAINER ==================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg, #ffffff);
+  border-bottom: 3px solid #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+/* ==================== LEFT BRAND SECTION ==================== */
+.left-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #c6ee58;
+  height: 100%;
+  padding: 0 18px;
+  border-right: 2px solid #000000;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.logo-symbol {
+  font-weight: 800;
+  color: #000000;
+}
+
+.logo-text-first {
+  font-weight: 800;
+  color: #000000;
+}
+
+.logo-text-last {
+  font-weight: 500;
+  color: #000000;
+}
+
+.logo-short-name {
+  display: none;
+  font-weight: 900;
+  color: #000000;
+}
+
+/* ==================== MIDDLE NAVIGATION LINKS ==================== */
+.middle-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-color, #000000);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #7b52fb;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background-color: #c6ee58;
+  color: #000000;
+  border: 1.5px solid #000000;
+  box-shadow: 2px 2px 0px #000000;
+  font-weight: 900;
+}
+
+.nav-icon {
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* ==================== RIGHT CONTACT BUTTON ==================== */
+.right-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #7b52fb;
+  height: 100%;
+  border-left: 2px solid #000000;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 0 18px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-text-mobile {
+  display: none;
+}
+
+.contact-btn:hover,
+.contact-btn.active-contact {
+  background-color: #c6ee58;
+  color: #000000;
+}
+
+.contact-btn:hover .arrow-icon,
+.contact-btn.active-contact .arrow-icon {
+  stroke: #000000;
+  transform: translateX(3px);
+}
+
+.arrow-icon {
+  stroke: #ffffff;
+  transition: transform 0.2s ease, stroke 0.15s ease;
+}
+
+/* ==================== MOBILE LAYOUT (TOP <SM> + BOTTOM BAR) ==================== */
+@media (max-width: 768px) {
+
+  /* Show <SM> and hide full name */
+  .logo-full-name {
+    display: none;
+  }
+
+  .logo-short-name {
+    display: inline;
+    font-size: 1rem;
+  }
+
+  .left-section {
+    padding: 0 14px;
+  }
+
+  /* Compact right Contact button */
+  .contact-text-desktop {
+    display: none;
+  }
+
+  .contact-text-mobile {
+    display: inline;
+    font-size: 0.75rem;
+  }
+
+  .contact-btn {
+    padding: 0 12px;
+    gap: 0.35rem;
+  }
+
+  /* Move middle nav links to a fixed bottom bar */
+  .middle-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 58px;
+    background-color: #ffffff;
+    border-top: 3px solid #000000;
+    justify-content: space-around;
+    padding: 0 6px;
+    gap: 4px;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 -4px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-link {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    font-size: 0.62rem;
+    padding: 4px 8px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .nav-link:hover {
+    transform: none;
+  }
+
+  .nav-icon {
+    width: 17px;
+    height: 17px;
+  }
+}

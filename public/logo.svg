@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 50" width="340" height="50">
+  <!-- Geometric 'SM' Monogram -->
+  <g stroke="#f7ede2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Letter S -->
+    <path d="M 26 12 L 10 12 L 10 25 L 26 25 L 26 38 L 10 38" />
+    <!-- Letter M -->
+    <path d="M 38 38 L 38 12 L 48 25 L 58 12 L 58 38" />
+  </g>
+  
+  <!-- Typographic Name -->
+  <text x="76" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#f7ede2">
+    <tspan font-weight="800" letter-spacing="1.5">SOURABH</tspan>
+    <tspan font-weight="400" letter-spacing="3" dx="8">MAHIYA</tspan>
+  </text>
+</svg>

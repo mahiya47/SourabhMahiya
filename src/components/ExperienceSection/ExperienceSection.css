@@ -1,0 +1,398 @@
+/* ==================== SECTION WRAPPER ==================== */
+.section-experience-contact {
+    display: flex;
+    width: 100%;
+    border-bottom: 3px solid #000000;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ==================== LEFT PINK SIDE BADGE ==================== */
+.experience-side-pill {
+    flex: 0 0 160px;
+    background: #f472b6;
+    border-right: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.experience-side-pill h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: #000000;
+}
+
+.pill-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    color: #000000;
+}
+
+/* ==================== MIDDLE TIMELINE COLUMN ==================== */
+.experience-timeline-column {
+    flex: 1 1 auto;
+    padding: 2.25rem 2.5rem;
+    border-right: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.exp-timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.exp-timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: #000000;
+}
+
+.exp-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.exp-marker-dot {
+    width: 12px;
+    height: 12px;
+    background: #c6ee58;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.exp-content {
+    flex: 1;
+    background-color: #faf8f5;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    padding: 1rem 1.25rem;
+}
+
+.exp-role-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 0.5rem;
+}
+
+.exp-role-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.92rem;
+    font-weight: 900;
+    margin: 0;
+    color: #000000;
+}
+
+.exp-company {
+    color: #7b52fb;
+}
+
+.exp-meta-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exp-location-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+    padding: 2px 7px;
+    color: #334155;
+}
+
+.exp-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+    background-color: #c6ee58;
+    border: 1.5px solid #000000;
+    padding: 2px 8px;
+    color: #000000;
+}
+
+.exp-bullet-list {
+    margin: 0;
+    padding-left: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.exp-desc {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* ==================== ACTION BUTTONS ==================== */
+.exp-bottom-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.75rem;
+    padding-left: 2rem;
+}
+
+.retro-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 16px;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.retro-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000000;
+}
+
+.retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px #000000;
+}
+
+.btn-resume-view {
+    background-color: #c6ee58;
+}
+
+.btn-resume-view:hover {
+    background-color: #b4e040;
+}
+
+.btn-resume-download {
+    background-color: #ffffff;
+}
+
+.btn-resume-download:hover {
+    background-color: #f1ebd9;
+}
+
+/* ==================== RIGHT PURPLE CTA COLUMN ==================== */
+.contact-banner-column {
+    flex: 0 0 30%;
+    width: 30%;
+    background: #7b52fb;
+    position: relative;
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.contact-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.contact-banner-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-avail-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #000000;
+    color: #c6ee58;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border: 1.5px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+    margin-bottom: 1rem;
+}
+
+.avail-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #c6ee58;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.contact-giant-text {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(1.5rem, 2vw, 1.85rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 0 0 0.85rem 0;
+    text-shadow: 3px 3px 0px #000000;
+    letter-spacing: -0.02em;
+}
+
+.contact-banner-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: #f1f5f9;
+    margin: 0 0 1.5rem 0;
+}
+
+.btn-get-touch {
+    background: #c6ee58;
+    color: #000000;
+    font-size: 0.85rem;
+    padding: 12px 20px;
+}
+
+.btn-get-touch:hover {
+    background: #ffffff;
+}
+
+.btn-arrow {
+    transition: transform 0.15s ease;
+}
+
+.btn-get-touch:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.sticker-starburst {
+    position: absolute;
+    bottom: -18px;
+    right: -14px;
+    width: 76px;
+    height: 76px;
+    background: #f472b6;
+    border: 3px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: #000000;
+    transform: rotate(15deg);
+    box-shadow: 3px 3px 0px #000000;
+}
+
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+@media (max-width: 900px) {
+    .section-experience-contact {
+        flex-direction: column;
+    }
+
+    .experience-side-pill {
+        width: 100%;
+        flex: none;
+        border-right: none;
+        border-bottom: 3px solid #000000;
+    }
+
+    .experience-timeline-column {
+        border-right: none;
+        border-bottom: 3px solid #000000;
+    }
+
+    .contact-banner-column {
+        width: 100%;
+        flex: none;
+    }
+}
+
+/* ==================== SCROLL ANIMATIONS ==================== */
+.slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.visible {
+    opacity: 1 !important;
+    transform: translate(0) !important;
+}
+
+.delay-1 {
+    transition-delay: 0.05s;
+}
+
+.delay-2 {
+    transition-delay: 0.18s;
+}
+
+.delay-3 {
+    transition-delay: 0.32s;
+}
+
+@media (max-width: 900px) {
+
+    .slide-left,
+    .slide-right {
+        transform: translateY(28px);
+        transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .delay-1 {
+        transition-delay: 0s;
+    }
+
+    .delay-2 {
+        transition-delay: 0.1s;
+    }
+
+    .delay-3 {
+        transition-delay: 0.2s;
+    }
+}

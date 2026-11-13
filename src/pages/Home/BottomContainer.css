@@ -1,0 +1,89 @@
+/* ==================== SKILLS STRIP LAYOUT ==================== */
+.skills-strip-section {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 78px;
+    min-height: 78px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-bottom: 3px solid #000000;
+    overflow: hidden;
+}
+
+/* ==================== SKILLS LABEL BADGE ==================== */
+.skills-badge {
+    flex: 0 0 140px;
+    background-color: #7b52fb;
+    color: #ffffff;
+    border-right: 3px solid #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.25rem;
+    gap: 2px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.skills-badge-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+}
+
+.skills-badge-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.15rem;
+    line-height: 1;
+    font-weight: 900;
+    color: #c6ee58;
+}
+
+/* ==================== SKILLS ICONS TRACK ==================== */
+.skills-track {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    gap: 1.25rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #000000;
+    padding: 6px 10px;
+    border: 1.5px solid transparent;
+    cursor: default;
+    transition: transform 0.12s ease, background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    background-color: #c6ee58;
+    border-color: #000000;
+}
+
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+}
+
+.skill-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}

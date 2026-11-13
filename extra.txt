@@ -1,0 +1,173 @@
+import { useState } from "react";
+import { NavBar } from "../../components/NavBar/NavBar";
+import { certificationsData } from "../../data/portfolioData";
+import "./CertificationsPage.css";
+
+function CertCard({ cert, onOpenModal }) {
+    const candidates = [cert.image, ...(cert.fallbacks || [])];
+    const [idx, setIdx] = useState(0);
+    const [failedAll, setFailedAll] = useState(false);
+
+    const activeSrc = candidates[idx];
+
+    const handleError = () => {
+        if (idx + 1 < candidates.length) {
+            setIdx(idx + 1);
+        } else {
+            setFailedAll(true);
+        }
+    };
+
+    return (
+        <article className="cert-full-card">
+            <div
+                className="cert-preview-frame"
+                onClick={() => !failedAll && onOpenModal(cert, activeSrc)}
+                style={{ cursor: failedAll ? "default" : "zoom-in" }}
+            >
+                {!failedAll ? (
+                    <img
+                        src={encodeURI(activeSrc)}
+                        alt={cert.title}
+                        onError={handleError}
+                    />
+                ) : (
+                    <div className="cert-fallback-placard">
+                        <span className="placard-issuer">{cert.issuer}</span>
+                        <strong className="placard-title">{cert.title}</strong>
+                        <span className="placard-hint">
+                            Check filename in public/Certificates:
+                            <br />
+                            {cert.image.replace("/Certificates/", "")}
+                        </span>
+                    </div>
+                )}
+                <span className="cert-year-tag">{cert.year}</span>
+            </div>
+
+            <div className="cert-card-content">
+                <span className="cert-issuer-tag">{cert.issuer}</span>
+                <h2 className="cert-heading">{cert.title}</h2>
+                <div className="cert-id-tag">ID: {cert.credentialId}</div>
+
+                <div className="cert-skills-list">
+                    {cert.skills.map((s) => (
+                        <span key={s} className="cert-skill-pill">
+                            {s}
+                        </span>
+                    ))}
+                </div>
+
+                <button
+                    type="button"
+                    onClick={() => onOpenModal(cert, activeSrc, failedAll)}
+                    className="view-cert-btn"
+                >
+                    OPEN FULL CERTIFICATE &rarr;
+                </button>
+            </div>
+        </article>
+    );
+}
+
+export function CertificationsPage() {
+    const [selectedCert, setSelectedCert] = useState(null);
+
+    const openModal = (cert, resolvedSrc, isBroken = false) => {
+        setSelectedCert({ ...cert, resolvedSrc, isBroken });
+    };
+
+    const closeModal = () => {
+        setSelectedCert(null);
+    };
+
+    return (
+        <>
+            <NavBar />
+            <main className="certs-page-wrapper">
+                <section className="certs-masthead">
+                    <div className="certs-masthead-badge">
+                        ACCREDITATION LOG ({certificationsData.length} CERTIFICATES)
+                    </div>
+                    <h1 className="certs-masthead-title">
+                        VERIFIED LICENSES &amp; CERTIFICATIONS
+                    </h1>
+                    <p className="certs-masthead-subtext">
+                        Official engineering simulations, frontend architecture, data science, and cybersecurity credentials.
+                    </p>
+                </section>
+
+                <section className="certs-display-grid">
+                    {certificationsData.map((cert) => (
+                        <CertCard
+                            key={cert.id}
+                            cert={cert}
+                            onOpenModal={openModal}
+                        />
+                    ))}
+                </section>
+
+                {/* ==================== FULL CERTIFICATE LIGHTBOX MODAL ==================== */}
+                {selectedCert && (
+                    <div className="cert-modal-backdrop" onClick={closeModal}>
+                        <div
+                            className="cert-modal-window"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="cert-modal-topbar">
+                                <div className="cert-modal-title-group">
+                                    <span className="modal-issuer-pill">{selectedCert.issuer}</span>
+                                    <h3 className="modal-cert-title">{selectedCert.title}</h3>
+                                </div>
+                                <button
+                                    type="button"
+                                    className="cert-modal-close"
+                                    onClick={closeModal}
+                                >
+                                    ✕ CLOSE
+                                </button>
+                            </div>
+
+                            <div className="cert-modal-body">
+                                {!selectedCert.isBroken ? (
+                                    <img
+                                        src={encodeURI(selectedCert.resolvedSrc)}
+                                        alt={selectedCert.title}
+                                        className="cert-modal-full-img"
+                                    />
+                                ) : (
+                                    <div className="cert-modal-missing">
+                                        <p>
+                                            <strong>Image file not matched yet!</strong>
+                                        </p>
+                                        <p>
+                                            Open <code>src/data/portfolioData.js</code> and make sure{" "}
+                                            <code>{selectedCert.image}</code> matches the exact file
+                                            name inside your <code>public/Certificates/</code> folder.
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="cert-modal-footer">
+                                <span className="modal-cred-id">
+                                    CREDENTIAL ID: {selectedCert.credentialId} • ISSUED {selectedCert.year}
+                                </span>
+                                {!selectedCert.isBroken && (
+                                    <a
+                                        href={encodeURI(selectedCert.resolvedSrc)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="modal-newtab-btn"
+                                    >
+                                        OPEN ORIGINAL IMAGE IN NEW TAB &nearr;
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </main>
+        </>
+    );
+}
